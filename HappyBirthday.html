@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Popup</title>
+    <style>
+        /* Full-page body with animated RGB background */
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #87CEEB, #0000ff);
+            background-size: 400% 400%;
+            animation: colorShift 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center the content */
+            position: relative; /* For floating balloons */
+            overflow: hidden;
+        }
+
+        /* RGB color-changing animation */
+        @keyframes colorShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Balloons floating */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            font-size: 50px;
+            animation: float 10s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        /* Floating animation for balloons */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-120vh); }
+        }
+
+        /* Layout for the images and button */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            position: relative;
+            z-index: 1; /* To place content above the balloons */
+        }
+
+        /* Left image styling with original aspect ratio */
+        .square-img-left {
+            width: 300px; /* Larger width */
+            height: auto; /* Adjust height to maintain aspect ratio */
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Right image styling */
+        .square-img-right {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 20px 50px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 24px;
+            color: #FFF;
+            background-color: #333;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        /* Centered modal (popup) box */
+        .modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center the modal */
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            max-height: 85vh;
+            overflow-y: scroll; /* Scrollable if content overflows */
+            font-size: 1.2rem;
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Modal image styling */
+        .modal-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        /* Modal message styling */
+        .modal-message {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Balloon positions */
+        .balloon:nth-child(1) { left: 10%; animation-duration: 12s; }
+        .balloon:nth-child(2) { left: 25%; animation-duration: 10s; }
+        .balloon:nth-child(3) { left: 40%; animation-duration: 14s; }
+        .balloon:nth-child(4) { left: 60%; animation-duration: 13s; }
+        .balloon:nth-child(5) { left: 75%; animation-duration: 9s; }
+        .balloon:nth-child(6) { left: 90%; animation-duration: 16s; }
+    </style>
+</head>
+<body>
+
+    <!-- Floating balloons -->
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+    <div class="balloon">🎈</div>
+
+    <!-- Main content: Two square images and button -->
+    <div class="container">
+        <!-- Left image with larger size and aspect ratio maintained -->
+        <img src="/Users/gouravnss/Downloads/Charminar Cousins.jpeg" alt="Charminar Cousins" class="square-img-left">
+        
+        <!-- Button in the middle -->
+        <button class="btn" id="birthdayBtn">Happy Birthday Hamsita!</button>
+
+        <!-- Right image with smaller size -->
+        <img src="/Users/gouravnss/Downloads/Hamsi Diwali.jpeg" alt="Hamsi Diwali" class="square-img-right">
+    </div>
+
+    <!-- Modal (Popup) -->
+    <div id="birthdayModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Happy Birthday, Hamsita! 🎉</h2>
+
+            <!-- Image inside the modal -->
+            <img src="/Users/gouravnss/Downloads/Hamsi Near Cafe.jpeg" alt="Hamsita Near Cafe" class="modal-img">
+            
+            <!-- Scrollable birthday messages -->
+            <p class="modal-message">Wishing you a day filled with love, joy, and all your favorite things!</p>
+            <p class="modal-message">Happy Birthday! May all your dreams come true!</p>x
+            <p class="modal-message">Have a fantastic year ahead!</p>
+            <p class="modal-message">Enjoy your special day!</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("birthdayModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("birthdayBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("closeModal");
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "flex";  // Show the modal when the button is clicked
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";  // Close the modal when the 'x' is clicked
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";  // Close modal if clicked outside
+            }
+        }
+    </script>
+
+</body>
+</html>
