@@ -1,0 +1,14 @@
+def symmetricdecoding(a):
+    for _ in range(a):
+        n = int(input())
+        s = input().strip()
+        r = sorted(set(s))
+        mapping = {}
+        length = len(r)
+        for i in range(length):
+            mapping[r[i]] = r[length - 1 - i]
+        decoded = ''.join(mapping[i] for i in s)
+        print(decoded)
+ 
+t = int(input())
+symmetricdecoding(t)
