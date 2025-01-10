@@ -1,1 +1,11 @@
-
+#apple{
+    background-color: #2196f3;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;    
+}
+#ex{
+    background-color: white;
+    height: 100px;
+    width: 200px;
+}
