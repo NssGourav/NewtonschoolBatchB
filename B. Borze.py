@@ -11,6 +11,6 @@ while i < len(a):
             result += '1'
         else:
             result += '2'
-        i += 2
+        i =i+ 2
 
 print(result)
