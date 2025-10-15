@@ -1,5 +1,4 @@
 def convertToAdjList(n, edgeList):
-    # write your code here
     adj = [[]for _ in range(n)]
 
     for u,v in edgeList:
