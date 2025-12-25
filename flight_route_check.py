@@ -1,6 +1,6 @@
 def solve(n, edges):
     g = [[] for _ in range(n+1)]
-    rg = [[] for _ in range(n+1)]  # reversed graph
+    rg = [[] for _ in range(n+1)]  
 
     for a, b in edges:
         g[a].append(b)
