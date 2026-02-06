@@ -16,7 +16,6 @@ abstract class SmartDevice {
     abstract performAction(): void;
 }
 
-// SmartLight class
 class SmartLight extends SmartDevice implements Connectable {
     connect(): void {
         console.log(`SmartLight connected`);
@@ -29,7 +28,6 @@ class SmartLight extends SmartDevice implements Connectable {
     }
 }
 
-// SmartLock class
 class SmartLock extends SmartDevice implements Connectable {
     connect(): void {
         console.log("SmartLock connected");
