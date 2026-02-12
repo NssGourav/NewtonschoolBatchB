@@ -1,2 +1,25 @@
-const users = [{name: 'A', age: 25}, {name: 'B', age: 15}], return an array of names for users over 18
-const l=users.filter(a=>a.age>18).map(n=>n.name)
+import React, { useState } from "react";
+
+function App() {
+  const [text, setText] = useState("");
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+
+  return (
+    <div>
+      <input 
+        type="text" 
+        placeholder="Type something..."
+        value={text}
+        onChange={handleChange}
+      />
+      
+      <p>{text}</p>
+    </div>
+  );
+}
+
+export default App;
+
