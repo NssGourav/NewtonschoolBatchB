@@ -7,6 +7,3 @@ def functionn(a):
         else:
             results.append("NO")
     return ('\n'.join(results))
- 
-a = int(input())
-print(functionn(a))
