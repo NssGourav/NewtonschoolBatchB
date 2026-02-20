@@ -9,7 +9,3 @@ def Function(N, A):
         left_sum += A[i]
 
     return count
-
-N = int(input())
-A = list(map(int, input().split()))
-print(Function(N, A))
