@@ -1,4 +1,3 @@
-
 n, k = map(int, input().split())
 odds = (n + 1) // 2
 if k <= odds:
