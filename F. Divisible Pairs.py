@@ -11,7 +11,6 @@ def pairs():
         rem2 = o
         if (rem1, rem2) in dict:
             result += dict[(rem1, rem2)]
-        
         if (t, o) in dict:
             dict[(t, o)] += 1
         else:
