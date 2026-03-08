@@ -4,7 +4,6 @@ def pairs():
     a = list(map(int, input().split()))
     dict = {}
     result = 0
-    
     for i in range(n):
         t = a[i] % x
         o = a[i] % y
