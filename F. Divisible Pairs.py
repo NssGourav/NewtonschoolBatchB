@@ -9,7 +9,6 @@ def pairs():
         o = a[i] % y
         rem1 = (x - t) % x
         rem2 = o
-        
         if (rem1, rem2) in dict:
             result += dict[(rem1, rem2)]
         
