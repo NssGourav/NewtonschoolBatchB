@@ -15,7 +15,6 @@ def pairs():
             dict[(t, o)] += 1
         else:
             dict[(t, o)] = 1
-    
     print(result)
  
 t = int(input())
