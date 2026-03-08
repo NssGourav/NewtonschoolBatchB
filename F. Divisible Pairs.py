@@ -7,7 +7,6 @@ def pairs():
     for i in range(n):
         t = a[i] % x
         o = a[i] % y
-        
         rem1 = (x - t) % x
         rem2 = o
         
