@@ -11,5 +11,4 @@ for i in range(t):
             if a[i] != a[0]:
                 freqmax = i + 1
                 break
-
     print(freqmax)
