@@ -1,4 +1,3 @@
-
 n=int(input())
 lst=list(map(int, input().split()))
 count=1
