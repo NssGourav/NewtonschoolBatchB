@@ -1,5 +1,1 @@
-def maxicoin(k):
-    if k <= 3:
-        return 1
-    chinnacoin = k//4
-    return 2 * maxicoin(chinnacoin)
+
