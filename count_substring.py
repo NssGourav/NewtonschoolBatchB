@@ -6,4 +6,3 @@ for i in range(n):
         if s[i:j+1] == s[i:j+1][::-1]:
             count+=1
 print(count)
-
