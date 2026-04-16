@@ -1,4 +1,3 @@
-
 def merge_group_sort(transactions_df, customers_df):
     merged_df = transactions_df.merge(customers_df, on="Customer_ID", how="left")
 
